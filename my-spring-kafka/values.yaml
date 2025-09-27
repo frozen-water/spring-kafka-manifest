@@ -1,0 +1,15 @@
+replicaCount: 1
+
+image:
+  repository: my-spring-kafka
+  tag: latest
+  pullPolicy: IfNotPresent
+
+service:
+  type: ClusterIP
+  port: 8082
+
+kafka:
+  bootstrapServers: kafka:9092
+
+resources: {}

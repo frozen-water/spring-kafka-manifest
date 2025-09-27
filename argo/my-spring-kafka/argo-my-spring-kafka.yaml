@@ -1,0 +1,33 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: my-spring-kafka
+  namespace: argocd   # ArgoCD가 설치된 네임스페이스
+spec:
+  project: default
+
+  source:
+    repoURL: 'https://github.com/frozen-water/spring-kafka-manifest.git'  # GitOps 리포지토리
+    targetRevision: main                                  # 브랜치명
+    path: my-spring-kafka                         # 차트 경로
+    helm:
+      valueFiles:
+        - values.yaml
+      parameters:
+        - name: image.repository
+          value: your-registry/my-spring-kafka
+        - name: image.tag
+          value: latest
+        - name: kafka.bootstrapServers
+          value: kafka:9092
+
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: my-spring-kafka
+
+  syncPolicy:
+    automated:
+      prune: true       # 불필요한 리소스 제거
+      selfHeal: true    # drift 자동 복구
+    syncOptions:
+      - CreateNamespace=true
