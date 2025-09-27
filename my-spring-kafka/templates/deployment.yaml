@@ -22,4 +22,4 @@ spec:
             - containerPort: {{ .Values.service.port }}
           env:
             - name: SPRING_KAFKA_BOOTSTRAP_SERVERS
-              value: {{ .Values.kafka.bootstrapServers }}
+              value: "{{ .Values.kafka.bootstrapServers }}"
