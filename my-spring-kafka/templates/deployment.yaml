@@ -1,18 +1,18 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ include "my-spring-kafka.fullname" . }}
+  name: my-spring-kafka
   labels:
-    app: {{ include "my-spring-kafka.name" . }}
+    app: my-spring-kafka
 spec:
   replicas: {{ .Values.replicaCount }}
   selector:
     matchLabels:
-      app: {{ include "my-spring-kafka.name" . }}
+      app: my-spring-kafka
   template:
     metadata:
       labels:
-        app: {{ include "my-spring-kafka.name" . }}
+        app: my-spring-kafka
     spec:
       containers:
         - name: {{ .Chart.Name }}
