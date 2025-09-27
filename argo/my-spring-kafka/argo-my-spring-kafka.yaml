@@ -15,7 +15,7 @@ spec:
         - values.yaml
       parameters:
         - name: image.repository
-          value: your-registry/my-spring-kafka
+          value: frozenwater1/my-spring-kafka
         - name: image.tag
           value: latest
         - name: kafka.bootstrapServers
