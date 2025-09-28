@@ -18,8 +18,6 @@ spec:
           value: frozenwater1/my-spring-kafka
         - name: image.tag
           value: latest
-        - name: kafka.bootstrapServers
-          value: kafka:9092
 
   destination:
     server: https://kubernetes.default.svc
