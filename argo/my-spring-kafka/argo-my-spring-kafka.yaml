@@ -13,11 +13,6 @@ spec:
     helm:
       valueFiles:
         - values.yaml
-      parameters:
-        - name: image.repository
-          value: frozenwater1/my-spring-kafka
-        - name: image.tag
-          value: latest
 
   destination:
     server: https://kubernetes.default.svc
