@@ -10,6 +10,6 @@ service:
   port: 8082
 
 kafka:
-  bootstrapServers: kafka:9092
+  bootstrapServers: kafka.default.svc.cluster.local:9092
 
 resources: {}
