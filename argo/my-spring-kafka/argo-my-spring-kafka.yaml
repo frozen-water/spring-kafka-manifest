@@ -23,7 +23,7 @@ spec:
 
   destination:
     server: https://kubernetes.default.svc
-    namespace: my-spring-kafka
+    namespace: myapp
 
   syncPolicy:
     automated:
