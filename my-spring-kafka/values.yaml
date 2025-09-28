@@ -2,7 +2,7 @@ replicaCount: 1
 
 image:
   repository: frozenwater1/my-spring-kafka
-  tag: 08e866a
+  tag: 6197735
   pullPolicy: IfNotPresent
 
 service:
